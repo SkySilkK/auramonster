@@ -22,6 +22,8 @@ jobs:
           script : |
             cd ~/auramonster
             git pull
+            source ~/.nvm/nvm.sh
+            nvm use 24
             npm ci
             npm run build
             sudo cp -r ~/auramonster/dist/* /var/www/html
