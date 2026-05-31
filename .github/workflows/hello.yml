@@ -19,9 +19,9 @@ jobs:
           username: ${{secrets.VPS_USER}}
           key: ${{secrets.VPS_SSH_KEY}}
 
-    script : |
-      cd ~/auramonster
-      git pull
-      npm ci
-      npm run build
-      sudo cp -r ~/auramonster/dist/* /var/www/html
+          script : |
+            cd ~/auramonster
+            git pull
+            npm ci
+            npm run build
+            sudo cp -r ~/auramonster/dist/* /var/www/html
