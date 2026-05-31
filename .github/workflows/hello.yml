@@ -1,4 +1,4 @@
-name: Hello Action
+name: Show system info
 
 on:
   push:
@@ -11,5 +11,8 @@ jobs:
 
 
     steps:
-      - name: Say Hello
-        run: echo "Hello from Github Actions!"
+      - name: Show Linux info
+        run: |
+          whoami
+          pwd
+          uname -a
