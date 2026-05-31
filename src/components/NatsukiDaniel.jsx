@@ -1,4 +1,3 @@
-import auraMonster from "../../public/images/natsuki-daniel.jpeg";
 
 function NatsukiDaniel(){
   return(
@@ -8,7 +7,7 @@ function NatsukiDaniel(){
           width: "20%",
           height: "auto",
         }}
-        src={auraMonster} 
+        src='images/natsuki-daniel.jpeg'
         alt="natsuki-daniel-aura" />
     </div>
   );
