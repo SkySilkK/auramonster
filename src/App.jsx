@@ -59,6 +59,7 @@ function App() {
     <>
       <h1>Natsuki Daniel</h1>
       <p><b>Walking stairs with Aura</b></p>
+      <p>Hello CI/CD</p>
       <p>{user.name}</p>
       <NatsukiDaniel />
       <ConditionalRender />

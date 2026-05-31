@@ -1,0 +1,27 @@
+name: Build react app
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+
+    steps:
+      - name : Deploy to VPS 
+        uses: appleboy/ssh-action@v1
+
+        with:
+          host: ${{secrets.VPS_HOST}}
+          username: ${{secrets.VPS_NAME}}
+          key: ${{secrets.VPS_SSH}}
+
+          script : |
+            cd ~/auramonster
+            git pull
+            npm ci
+            npm run build
+            sudo cp -r ~/auramonster/dist/* /var/www/html
