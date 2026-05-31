@@ -11,16 +11,17 @@ jobs:
 
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v6
+      - name : Deploy to VPS 
+        uses: appleboy/ssh-action@1.10.0
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with: 
-          node-version: 22
+        with:
+          host: ${{secrets.VPS_HOST}}
+          username: ${{secrets.VPS_USER}}
+          key: ${{secrets.VPS_SSH_KEY}}
 
-      - name: Install dependencies
-        run: npm ci
-
-      - name: 
-        run: npm run build
+    script : |
+      cd ~/auramonster
+      git pull
+      npm ci
+      npm run build
+      sudo cp -r ~/auramonster/dist/* /var/www/html
