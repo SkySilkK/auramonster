@@ -58,6 +58,7 @@ function App() {
   return (
     <>
       <h1>Natsuki Daniel</h1>
+      <p>Damn daniel</p>
       <p><b>Walking stairs with Aura</b></p>
       <p>Hello CI/CD</p>
       <p>{user.name}</p>
