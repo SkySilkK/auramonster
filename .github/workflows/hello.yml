@@ -26,4 +26,4 @@ jobs:
             nvm use 24
             npm ci
             npm run build
-            sudo cp -r ~/auramonster/dist/* /var/www/html
+            sudo rsync -av --delete ~/auramonster/dist/ /var/www/html/
